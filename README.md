@@ -17,7 +17,7 @@ Installation instructions using a terminal
 -------------
 
 #### 0. Clone the project using Git
-    # git clone git@github.com:m4droid/Web-Experiences.git
+    git clone git@github.com:m4droid/Web-Experiences.git
 
 #### 1. Install Bower
     # Requires node.js with npm
