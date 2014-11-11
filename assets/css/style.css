@@ -1,0 +1,53 @@
+body {
+  padding: 10px;
+}
+
+#content {
+  position: relative;
+  width: 720px;
+  height: 576px;
+  border: 1px #DDD solid;
+  margin: 20px auto 10px;
+}
+
+#youtube-player {
+  display: block;
+  margin: 0 auto;
+}
+
+.controls {
+  margin: 0 auto;
+  width: 250px;
+  text-align: center
+}
+
+.controls span {
+  width: 100px;
+}
+
+.multiple-choice {
+  padding: 30px 20px;
+}
+
+.multiple-choice .choices label {
+  text-align: left;
+}
+
+.multiple-choice-question {
+  text-align: center;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.multiple-choice-selection {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.multiple-choice-feedback {
+  position: absolute;
+  width: 100%;
+  bottom: 25px;
+  text-align: center;
+}

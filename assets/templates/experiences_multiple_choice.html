@@ -1,0 +1,68 @@
+<div>
+  <form class="multiple-choice" role="form" id="multiple-choice-form">
+    <div class="multiple-choice-question">{{ question }}</div>
+    <div class="choices">
+    {{ #choices }}
+      <div class="radio">
+        <label class="multiple-choice-selection">
+          <input type="radio" name="multiple-choice-radio" value="{{ value }}">
+          {{ text }}
+        </label>
+      </div>
+    {{ /choices }}
+    </div>
+  </form>
+  <div class="multiple-choice-feedback">
+    <span class="alert hidden"></span>
+  </div>
+  <script type="text/javascript">
+  $("input[name='multiple-choice-radio']").click(function(ev) {
+    $(".multiple-choice-feedback .alert").addClass("hidden");
+  });
+
+  var htmlExperiencePreviousCallback = function () {
+    return 0;
+  };
+
+  var htmlExperienceNextCallback = function () {
+    var answer = $("input[name='multiple-choice-radio']:checked").val();
+
+    $(".multiple-choice-feedback .alert").removeClass("alert-success");
+    $(".multiple-choice-feedback .alert").removeClass("alert-danger");
+    $(".multiple-choice-feedback .alert").removeClass("alert-info");
+
+    // If user hasn't chosen an option
+    if(answer === undefined) {
+      $(".multiple-choice-feedback .alert").html("Debes elegir una opción");
+      $(".multiple-choice-feedback .alert").addClass("alert-info");
+      $(".multiple-choice-feedback .alert").removeClass("hidden");
+      return -1;
+    } else {
+      // Disable navigation buttons
+      $("#experience-previous").attr("disabled", true);
+      $("#experience-next").attr("disabled", true);
+
+      // Check the answer
+      if(answer === String({{ correct_value }})) {
+        $(".multiple-choice-feedback .alert").html("La respuesta es correcta");
+        $(".multiple-choice-feedback .alert").addClass("alert-success");
+        $(".multiple-choice-feedback .alert").removeClass("hidden");
+      } else {
+        $(".multiple-choice-feedback .alert").html("La respuesta es incorrecta");
+        $(".multiple-choice-feedback .alert").addClass("alert-danger");
+        $(".multiple-choice-feedback .alert").removeClass("hidden"); 
+      }
+      return 3000;
+    }
+  };
+
+  var htmlExperienceGetCurrentState = function () {
+    return {
+      "type": "html-multiple-choice",
+      "id": String("{{ id }}"),
+      "answer": $("input[name='multiple-choice-radio']:checked").val(),
+      "correct_answer": String({{ correct_value }}),
+    };
+  };
+  </script>
+</div>

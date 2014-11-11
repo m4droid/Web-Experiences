@@ -1,0 +1,34 @@
+[
+  {
+    "type": "video_youtube",
+    "id": "video_youtube_0",
+    "video_id": "Ire61Q62KGU",
+    "params": {
+      "start_time": 1, 
+      "end_time": 882
+    }
+  },
+  {
+    "type": "html",
+    "template": "assets/templates/experiences_multiple_choice.html",
+    "params": {
+      "id": "html_multiple_choice_0",
+      "question": "¿Cuál de las siguientes afirmaciones es falsa con respecto a los circuitos combinacionales digitales?",
+      "correct_value": 3,
+      "choices": [
+        {"value": 0, "text": "Funcionan en intervalos de tiempo."},
+        {"value": 1, "text": "No tienen memoria."},
+        {"value": 2, "text": "Todas sus entradas y salidas son digitales."},
+        {"value": 3, "text": "Las compuerta lógica NOT no es un circuito combinacional."},
+        {"value": 4, "text": "El circuito lógico MUX es un circuito combinacional."}
+      ]
+    }
+  },
+  {
+    "type": "html",
+    "template": "assets/templates/experiences_end.html",
+    "params": {
+      "number": 0
+    }
+  }
+]

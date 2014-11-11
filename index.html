@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Experiences testing</title>
+  
+  <!-- External JS libraries -->
+  <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="/bower_components/jQuery-Storage-API/jquery.storageapi.min.js"></script>
+  <script src="/bower_components/mustache/mustache.js"></script>
+  <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="/bower_components/momentjs/min/moment.min.js"></script>
+  <script src="/bower_components/swfobject/swfobject/swfobject.js"></script>
+
+  <script src="/assets/js/experiences_base.js"></script>
+  <script src="/assets/js/experiences_video_youtube.js"></script>
+  <script src="/assets/js/experiences_html.js"></script>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+
+  <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
+</head>
+<body>
+<div id="content"></div>
+<div class="controls">
+  <span id="experience-previous" class="btn btn-primary">Previous</span>
+  <span id="experience-next" class="btn btn-primary">Next</span>
+</div>
+<script type="text/javascript">
+  $(document).ready(function() {
+    jQuery.ajax({
+      url: 'data/experiences.json',
+      type: 'GET',
+      dataType: 'json',
+      complete: function(xhr, textStatus) {
+        //called when complete
+      },
+      success: function(data, textStatus, xhr) {
+        loadExperiences(data);
+      },
+      error: function(xhr, textStatus, errorThrown) {
+        //called when there is an error
+      }
+    });
+  });
+  </script>
+</body>
+</html>

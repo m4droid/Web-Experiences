@@ -1,0 +1,16 @@
+<div>
+  <h1 style="text-align: center;">Fin de la experiencia {{ number }}</h1>
+  <div class="btn btn-success" onclick="resetExperiences();" style="margin: 0 auto; max-width: 200px; display: block;">Reiniciar experiencias</div>
+  <script type="text/javascript">
+  $("#experience-previous").attr("disabled", true);
+  var htmlExperiencePreviousCallback = function () {
+    return -1;
+  };
+  var htmlExperienceNextCallback = function () {
+    return -1;
+  };
+  var htmlExperienceGetCurrentState = function () {
+    return {};
+  };
+  </script>
+</div>
