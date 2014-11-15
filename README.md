@@ -9,7 +9,6 @@ It uses the following libraries:
 - Twitter Bootstrap
 - Mustache
 - Moment.js
-- swfobject
 - YouTube JavaScript API
 
 
