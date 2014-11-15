@@ -18,7 +18,6 @@
     "mustache": "~0.8.2",
     "bootstrap": "~3.3.0",
     "momentjs": "~2.8.3",
-    "swfobject": "*",
     "jQuery-Storage-API": "~1.7.3"
   }
 }

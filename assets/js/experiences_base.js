@@ -1,4 +1,5 @@
 var ytplayer = null;
+var ytplayerParams = null;
 var experiences = [];
 var current_experience_index = -1;
 
