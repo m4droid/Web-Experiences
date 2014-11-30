@@ -12,12 +12,12 @@
     {{ /choices }}
     </div>
   </form>
-  <div class="multiple-choice-feedback">
+  <div class="feedback">
     <span class="alert hidden"></span>
   </div>
   <script type="text/javascript">
   $("input[name='multiple-choice-radio']").click(function(ev) {
-    $(".multiple-choice-feedback .alert").addClass("hidden");
+    $(".feedback .alert").addClass("hidden");
   });
 
   var htmlOnPreviousButtonPress = function () {
@@ -27,15 +27,15 @@
   var htmlOnNextButtonPress = function () {
     var answer = $("input[name='multiple-choice-radio']:checked").val();
 
-    $(".multiple-choice-feedback .alert").removeClass("alert-success");
-    $(".multiple-choice-feedback .alert").removeClass("alert-danger");
-    $(".multiple-choice-feedback .alert").removeClass("alert-info");
+    $(".feedback .alert").removeClass("alert-success");
+    $(".feedback .alert").removeClass("alert-danger");
+    $(".feedback .alert").removeClass("alert-info");
 
     // If user hasn't chosen an option
     if(answer === undefined) {
-      $(".multiple-choice-feedback .alert").html("Debes elegir una opción");
-      $(".multiple-choice-feedback .alert").addClass("alert-info");
-      $(".multiple-choice-feedback .alert").removeClass("hidden");
+      $(".feedback .alert").html("Debes elegir una opción");
+      $(".feedback .alert").addClass("alert-info");
+      $(".feedback .alert").removeClass("hidden");
       return -1;
     } else {
       // Disable navigation buttons
@@ -44,13 +44,13 @@
 
       // Check the answer
       if(answer === String({{ correct_value }})) {
-        $(".multiple-choice-feedback .alert").html("La respuesta es correcta");
-        $(".multiple-choice-feedback .alert").addClass("alert-success");
-        $(".multiple-choice-feedback .alert").removeClass("hidden");
+        $(".feedback .alert").html("La respuesta es correcta");
+        $(".feedback .alert").addClass("alert-success");
+        $(".feedback .alert").removeClass("hidden");
       } else {
-        $(".multiple-choice-feedback .alert").html("La respuesta es incorrecta");
-        $(".multiple-choice-feedback .alert").addClass("alert-danger");
-        $(".multiple-choice-feedback .alert").removeClass("hidden"); 
+        $(".feedback .alert").html("La respuesta es incorrecta");
+        $(".feedback .alert").addClass("alert-danger");
+        $(".feedback .alert").removeClass("hidden");
       }
       return 3000;
     }

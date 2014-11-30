@@ -25,6 +25,30 @@
     }
   },
   {
+    "type": "video_youtube",
+    "id": "video_youtube_0",
+    "video_id": "Ire61Q62KGU",
+    "params": {
+      "start_time": 882,
+      "end_time": 2228
+    }
+  },
+  {
+    "type": "html",
+    "template": "assets/templates/experiences_truth_tables.html",
+    "params": {
+      "id": "truth_tables_0"
+    }
+  },
+  {
+    "type": "video_youtube",
+    "id": "video_youtube_0",
+    "video_id": "Ire61Q62KGU",
+    "params": {
+      "start_time": 2228
+    }
+  },
+  {
     "type": "html",
     "template": "assets/templates/experiences_end.html",
     "params": {

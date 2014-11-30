@@ -1,0 +1,168 @@
+<div>
+  <h1 style="text-align: center;">Completa las siguientes tablas de verdad</h1>
+  <div class="tables-container">
+    <table class="table table-bordered truth-table">
+      <thead>
+        <tr>
+          <th>a</th>
+          <th>b</th>
+          <th>a AND b</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr id="and0_row">
+          <td>0</td>
+          <td>0</td>
+          <td class="input-container">
+            <input name="and0" />
+          </td>
+        </tr>  
+        <tr id="and1_row">
+          <td>0</td>
+          <td>1</td>
+          <td class="input-container">
+            <input name="and1" />
+          </td>
+        </tr>
+        <tr id="and2_row">
+          <td>1</td>
+          <td>0</td>
+          <td class="input-container">
+            <input name="and2" />
+          </td>
+        </tr>
+        <tr id="and3_row">
+          <td>1</td>
+          <td>1</td>
+          <td class="input-container">
+            <input name="and3" />
+          </td>
+        </tr>       
+      </tbody>
+    </table>
+    <table class="table table-bordered truth-table">
+      <thead>
+        <tr>
+          <th>a</th>
+          <th>b</th>
+          <th>a OR b</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr id="or0_row">
+          <td>0</td>
+          <td>0</td>
+          <td class="input-container">
+            <input name="or0" />
+          </td>
+        </tr>  
+        <tr id="or1_row">
+          <td>0</td>
+          <td>1</td>
+          <td class="input-container">
+            <input name="or1" />
+          </td>
+        </tr>
+        <tr id="or2_row">
+          <td>1</td>
+          <td>0</td>
+          <td class="input-container">
+            <input name="or2" />
+          </td>
+        </tr>
+        <tr id="or3_row">
+          <td>1</td>
+          <td>1</td>
+          <td class="input-container">
+            <input name="or3" />
+          </td>
+        </tr>       
+      </tbody>
+    </table>
+  </div>
+  <div class="feedback">
+    <span class="alert hidden"></span>
+  </div>
+  <script type="text/javascript">
+  var data = {
+    'and': {
+      'tags': ['and0', 'and1', 'and2', 'and3'],
+      'correct_answers': ['0', '0', '0', '1'],
+      'answers': [],
+      'result': true
+    },
+    'or': {
+      'tags': ['or0', 'or1', 'or2', 'or3'],
+      'correct_answers': ['0', '1', '1', '1'],
+      'answers': [],
+      'result': true
+    }
+  };
+
+  var htmlOnPreviousButtonPress = function () {
+    return 0;
+  };
+  var htmlOnNextButtonPress = function () {
+    $(".feedback .alert").addClass("hidden");
+
+    for(var opTag in data) {
+      for(var i in data[opTag]['tags']) {
+        value = $('input[name=' + data[opTag]['tags'][i] + ']').val();
+        data[opTag]['answers'].push(value);
+      }
+    }
+
+    for(i in data.and.correct_answers) {
+      data.and.result = data.and.result && data.and.correct_answers[i] === data.and.answers[i];
+      data.or.result = data.or.result && data.or.correct_answers[i] === data.or.answers[i];
+    }
+
+    $(".feedback .alert").removeClass("alert-success");
+    $(".feedback .alert").removeClass("alert-danger");
+
+    // Disable navigation buttons
+    $("#experience-previous").attr("disabled", true);
+    $("#experience-next").attr("disabled", true);
+
+    if(data.and.result && data.or.result) {
+      $(".feedback .alert").html("La respuesta es correcta");
+      $(".feedback .alert").addClass("alert-success");
+      $(".feedback .alert").removeClass("hidden");
+    } else {
+      $(".feedback .alert").html("La respuesta es incorrecta");
+      $(".feedback .alert").addClass("alert-danger");
+      $(".feedback .alert").removeClass("hidden");
+    }
+
+    return 3000;
+  };
+  var htmlGetCurrentState = function () {
+    data["type"] = "truth-tables";
+    data["id"] = String("{{ id }}");
+    return data;
+  };
+  </script>
+  <style type="text/css">
+  .tables-container {
+    text-align: center;
+    margin: 100px;
+  }
+  .truth-table {
+    text-align: center;
+    width: 200px;
+    display: inline-table;
+    margin: 10px 20px;
+  }
+  .truth-table th {
+    text-align: center;
+  }
+  .input-container {
+    padding: 0;
+  }
+  .truth-table input {
+    width: 90px;
+    margin: 0;
+    text-align: center;
+  }
+  </style>
+</div>

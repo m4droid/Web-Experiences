@@ -45,7 +45,7 @@ body {
   font-size: 1.5em;
 }
 
-.multiple-choice-feedback {
+.feedback {
   position: absolute;
   width: 100%;
   bottom: 25px;

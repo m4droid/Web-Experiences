@@ -13,7 +13,7 @@ var HtmlExperience = function (raw_experience) {
   };
 
   that.onPreviousButtonPress = function () {
-    return htmlOnPreviousCallback();
+    return htmlOnPreviousButtonPress();
   };
 
   that.onNextButtonPress = function () {
