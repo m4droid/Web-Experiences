@@ -1,7 +1,10 @@
+// Keep only one copy of the YouTube player
 var ytplayer = null;
 var ytplayerParams = null;
+
 var experiences = [];
 var current_experience_index = -1;
+
 
 var ExperiencesFactory = function (raw_experience) {
   var experience = null;
@@ -31,7 +34,7 @@ var resetExperiences = function () {
   changeExperience(current_experience_index);
 };
 
-var check_controls = function () {
+var checkControls = function () {
   $("#experience-previous").attr("disabled", (current_experience_index === 0));
   $("#experience-next").attr("disabled", (current_experience_index == experiences.length - 1));
 };
@@ -41,7 +44,7 @@ var changeExperience = function (next_experience_index) {
     current_experience_index = next_experience_index;
     $.localStorage.set("current_experience_index", current_experience_index);
     experiences[current_experience_index].load();
-    check_controls();
+    checkControls();
   }
 };
 
@@ -62,10 +65,10 @@ var changeExperienceFromControls = function (next_index, experienceTimeoutFuncti
 
 $(document).ready(function () {
   $("#experience-previous").click(function (ev) {
-    changeExperienceFromControls(current_experience_index - 1, experiences[current_experience_index].checkPrevious);
+    changeExperienceFromControls(current_experience_index - 1, experiences[current_experience_index].onPreviousButtonPress);
   });
 
   $("#experience-next").click(function (ev) {
-    changeExperienceFromControls(current_experience_index + 1, experiences[current_experience_index].checkNext);
+    changeExperienceFromControls(current_experience_index + 1, experiences[current_experience_index].onNextButtonPress);
   });
 });

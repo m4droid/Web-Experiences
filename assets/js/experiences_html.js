@@ -12,16 +12,16 @@ var HtmlExperience = function (raw_experience) {
     that.start_time = moment();
   };
 
-  that.checkPrevious = function () {
-    return htmlExperiencePreviousCallback();
+  that.onPreviousButtonPress = function () {
+    return htmlOnPreviousCallback();
   };
 
-  that.checkNext = function () {
-    return htmlExperienceNextCallback();
+  that.onNextButtonPress = function () {
+    return htmlOnNextButtonPress();
   };
 
   that.getCurrentState = function() {
-    var data = htmlExperienceGetCurrentState();
+    var data = htmlGetCurrentState();
     var now = moment();
     data.start_time = that.start_time.format("YYYY-MM-DDTHH:mm:ss.SSSZZ");
     data.end_time = now.format("YYYY-MM-DDTHH:mm:ss.SSSZZ");

@@ -3,13 +3,15 @@
   <div class="btn btn-success" onclick="resetExperiences();" style="margin: 0 auto; max-width: 200px; display: block;">Reiniciar experiencias</div>
   <script type="text/javascript">
   $("#experience-previous").attr("disabled", true);
-  var htmlExperiencePreviousCallback = function () {
+  // Disallow go back
+  var htmlOnPreviousButtonPress = function () {
     return -1;
   };
-  var htmlExperienceNextCallback = function () {
+  // Disallow go forward
+  var htmlOnNextButtonPress = function () {
     return -1;
   };
-  var htmlExperienceGetCurrentState = function () {
+  var htmlGetCurrentState = function () {
     return {};
   };
   </script>

@@ -20,11 +20,11 @@
     $(".multiple-choice-feedback .alert").addClass("hidden");
   });
 
-  var htmlExperiencePreviousCallback = function () {
+  var htmlOnPreviousButtonPress = function () {
     return 0;
   };
 
-  var htmlExperienceNextCallback = function () {
+  var htmlOnNextButtonPress = function () {
     var answer = $("input[name='multiple-choice-radio']:checked").val();
 
     $(".multiple-choice-feedback .alert").removeClass("alert-success");
@@ -56,7 +56,7 @@
     }
   };
 
-  var htmlExperienceGetCurrentState = function () {
+  var htmlGetCurrentState = function () {
     return {
       "type": "html-multiple-choice",
       "id": String("{{ id }}"),

@@ -55,11 +55,11 @@ var YouTubeExperience = function (raw_experience) {
     }
   };
 
-  that.checkPrevious = function () {
+  that.onPreviousButtonPress = function () {
     return 0;
   };
 
-  that.checkNext = function () {
+  that.onNextButtonPress = function () {
     return 0;
   };
 
