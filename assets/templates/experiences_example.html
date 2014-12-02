@@ -1,0 +1,34 @@
+<div>
+  <!-- Experience HTML content -->
+  <h1 style="text-align: center;">Hello World!</h1>
+
+  <!-- Experience JavaScript content -->
+  <script type="text/javascript">
+  /**
+    * This function is called when the user press the previous experience
+    * button. Must return a integer greater or equal to zero representing
+    * the timeout in milliseconds to wait for the previous experience loading.
+    * Returning -1 means the current experience must be kept.
+  */
+  var htmlOnPreviousButtonPress = function () {
+    return -1;
+  };
+  /**
+    * This function is called when the user press the next experience
+    * button. Must return a integer greater or equal to zero representing
+    * the timeout in milliseconds to wait for the next experience loading.
+    * Returning -1 means the current experience must be kept.
+  */
+  var htmlOnNextButtonPress = function () {
+    return -1;
+  };
+  /**
+    * Must return a JavaScript object containing the data to be stored in a
+    * Web service. The parent method caller will add the start and end time
+    * of this experience to this object.
+  */
+  var htmlGetCurrentState = function () {
+    return {};
+  };
+  </script>
+</div>
